@@ -1,5 +1,5 @@
 /**
- * Test setup.
+ * Test setUp.
  */
 QUnit.testStart(function() {
   yoania.bufferingControl.clear();
@@ -22,7 +22,7 @@ asyncTest("test on resource.", 1, function() {
  * Test the buffering control with three resource.
  * All resources start in buffering state.
  * One by one I change the buffering state resource to false
- * When all the buffering control detects that all resources are NOT
+ * When the buffering control detects that all resources are NOT
  * buffering, I except the 'canplay' event.
  */
 asyncTest("test three resource.", 3, function() {

@@ -100,8 +100,6 @@ var yoania = (function() {
         }
       }
 
-      console.log(this._resources);
-
       if (!this._isBuffering) {
         this._triggerEvent('canplay', []);
       }
