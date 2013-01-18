@@ -23,7 +23,7 @@ asyncTest("test on resource.", 1, function() {
  * All resources start in buffering state.
  * One by one I change the buffering state resource to false
  * When the buffering control detects that all resources are NOT
- * buffering, I except the 'canplay' event.
+ * buffering, I expect the 'canplay' event.
  */
 asyncTest("test three resource.", 3, function() {
   // must pass in this callback twice.

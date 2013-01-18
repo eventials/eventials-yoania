@@ -1,6 +1,7 @@
 yoania
 ======
 
+This component's mission is to control the buffering state of all playable content that requires synchronization.
 
 Inital setup
 ------------
