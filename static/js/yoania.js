@@ -56,7 +56,8 @@ var yoania = (function() {
      * Remove a resource from the buffering control.
      */
     removeResource: function(resourceName) {
-      delete this._resources[resourceName];
+      var index = this._resources.indexOf(resourceName);
+      this._resources.splice(index, 1);
     },
 
     /**
@@ -107,7 +108,8 @@ var yoania = (function() {
   });
 
   return {
-    bufferingControl: new BufferingControl()
+    bufferingControl: new BufferingControl(),
+    mainTimelineControl: new EventGenerator()
   };
 
 })();
