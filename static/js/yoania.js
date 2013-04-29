@@ -30,9 +30,14 @@ var yoania = (function() {
     _triggerEvent: function(event, args) {
       var eventListenerArray = this._eventListeners[event] || [];
 
-      for (var idx in eventListenerArray) {
+      for (var idx = 0; idx < eventListenerArray.length; idx++) {
         var callback = eventListenerArray[idx];
-        callback.apply(this, args);
+        try {
+          callback.apply(this, args);
+        }
+        catch (e) {
+          console.error("Exception calling back the event '" + event + "'");
+        }
       }
     }
   });
