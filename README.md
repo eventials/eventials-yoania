@@ -1,6 +1,14 @@
-# Yoania
+# Yoania [![Version](http://img.shields.io/npm/v/yoania.svg)](https://www.npmjs.org/package/yoania)
 
 This component's mission is to control the buffering state of all playable content that requires synchronization.
+
+[![npm package](https://nodei.co/npm/yoania.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/yoania/)
+
+## Install
+
+Via npm:
+
+`npm install yoania`
 
 ## Dependencies
 
