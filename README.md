@@ -120,6 +120,10 @@ Open the file tests/yoania.html in your browser.
 
 `gulp minify`
 
+## License
+
+MIT
+
 ## References
 
 [Yoania](http://en.wikipedia.org/wiki/Yoania)
