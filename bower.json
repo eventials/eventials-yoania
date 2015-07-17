@@ -1,0 +1,31 @@
+{
+  "name": "yoania",
+  "version": "1.1.0",
+  "homepage": "https://github.com/eventials/eventials-yoania",
+  "authors": [
+    "Eventials <devs@eventials.com>",
+    "Alexandre Vicenzi <vicenzi.alexandre@gmail.com>"
+  ],
+  "description": "Control the buffering state of all playable content that requires synchronization.",
+  "main": "src/yoania.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "buffer",
+    "play",
+    "synchronization"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/eventials/eventials-yoania.git"
+  },
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
