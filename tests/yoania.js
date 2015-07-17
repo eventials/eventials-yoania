@@ -8,10 +8,15 @@ QUnit.testStart(function() {
 /**
  * Test the buffering control with only one resource.
  */
-asyncTest("test on resource.", 1, function() {
+asyncTest("test one resource buffering.", 2, function() {
+  var count = 0;
   yoania.bufferingControl.on("buffering", function() {
     ok(true);
-    start();
+    count++;
+
+    if (count === 2) {
+      start();
+    }
   });
 
   yoania.bufferingControl.addResource("slides");
@@ -25,8 +30,7 @@ asyncTest("test on resource.", 1, function() {
  * When the buffering control detects that all resources are NOT
  * buffering, I expect the 'ready' event.
  */
-asyncTest("test three resource.", 4, function() {
-  // must pass in this callback twice.
+asyncTest("test three resource.", 10, function() {
   yoania.bufferingControl.on("buffering", function() {
     ok(true);
   });
@@ -54,10 +58,9 @@ asyncTest("test three resource.", 4, function() {
  * 1 second later I set the same resrouce to READY afain (another 
  * 'ready' event is expected).
  */
-asyncTest("test two resource changing states.", 4, function() {
+asyncTest("test two resource changing states.", 7, function() {
   var passCount = 0;
 
-  // must pass in this callback twice.
   yoania.bufferingControl.on("buffering", function() {
     ok(true);
     passCount++;
@@ -68,7 +71,7 @@ asyncTest("test two resource changing states.", 4, function() {
     ok(true);
     passCount++;
 
-    if (passCount === 4) {
+    if (passCount === 7) {
       start();
     }
   });
@@ -96,7 +99,7 @@ asyncTest("test two resource changing states.", 4, function() {
  * When the buffering control detects that there's an erro,
  * I expect the 'error' event.
  */
-asyncTest("test three resources one with error.", 4, function() {
+asyncTest("test three resources one with error.", 10, function() {
   // must pass in this callback twice.
   yoania.bufferingControl.on("buffering", function() {
     ok(true);

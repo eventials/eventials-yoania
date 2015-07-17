@@ -20,6 +20,16 @@ var yoania = (function () {
         },
 
         /**
+        * Removes an event listener.
+        */
+        off: function(funct) {
+            var eventListenerArray = this._eventListeners[event];
+            if (eventListenerArray) {
+                eventListenerArray.pop(funct);
+            }
+        },
+
+        /**
          * Clear this class state.
          */
         clear: function () {
@@ -29,7 +39,7 @@ var yoania = (function () {
         /**
          * Triggers an event to the ones who are interested in.
          */
-        _triggerEvent: function (event, args) {
+        trigger: function (event, args) {
             var eventListenerArray = this._eventListeners[event] || [];
 
             for (var idx = 0; idx < eventListenerArray.length; idx++) {
@@ -62,6 +72,7 @@ var yoania = (function () {
          */
         addResource: function (resourceName, bufferingState) {
             this._resources[resourceName] = bufferingState || BufferingState.BUFFERING;
+            this._checkResources();
         },
 
         /**
@@ -70,6 +81,7 @@ var yoania = (function () {
         removeResource: function (resourceName) {
             var index = this._resources.indexOf(resourceName);
             this._resources.splice(index, 1);
+            this._checkResources();
         },
 
         /**
@@ -110,9 +122,9 @@ var yoania = (function () {
                 var state = this._resources[ri];
 
                 if (state === BufferingState.BUFFERING) {
-                    this._triggerEvent('buffering', [ri]);
+                    this.trigger('buffering', [ri]);
                 } else if (state === BufferingState.ERROR) {
-                    this._triggerEvent('error', [ri]);
+                    this.trigger('error', [ri]);
                 }
 
                 // If there's an error, that's nothing that we can do about it.
@@ -123,7 +135,7 @@ var yoania = (function () {
             }
 
             if (this._bufferingState === BufferingState.READY) {
-                this._triggerEvent('ready', []);
+                this.trigger('ready', []);
             }
         }
     });
