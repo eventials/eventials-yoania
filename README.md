@@ -1,6 +1,7 @@
 # Yoania [![Version](http://img.shields.io/npm/v/yoania.svg)](https://www.npmjs.org/package/yoania)
 
 An easy way to control multiple playable resources on your page.
+
 This component's mission is to control the buffering state of all playable content that requires synchronization.
 
 [![npm package](https://nodei.co/npm/yoania.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/yoania/)
@@ -29,6 +30,7 @@ Via bower:
 ### `yoania.BufferingState`
 
 Enum with all buffering states.
+
 Supported states are `READY`, `BUFFERING` and `ERROR`.
 
 ### `yoania.bufferingControl`
@@ -38,7 +40,7 @@ Takes control of buffering state of all resources.
 #### `addResource`
 
 Add a new resource. Takes 2 arguments, `resourceName` and `bufferingState`.
-`bufferingState` is optional (default: 'BUFERRING').
+`bufferingState` is optional (default: `BUFERRING`).
 
 #### `removeResource`
 
@@ -80,7 +82,7 @@ Events triggerred by `yoania.bufferingControl`.
 | buferring | resourceName | if any resource is buffering     |
 | error     | resourceName | if any resource get an error     |
 
-### Example
+## Example
 
 ```js
 yoania.bufferingControl.on("ready", function () {
