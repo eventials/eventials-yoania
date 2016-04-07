@@ -22,7 +22,7 @@ var yoania = (function () {
         /**
         * Removes an event listener.
         */
-        off: function(funct) {
+        off: function(event, funct) {
             var eventListenerArray = this._eventListeners[event];
             if (eventListenerArray) {
                 eventListenerArray.pop(funct);
