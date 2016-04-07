@@ -93,7 +93,7 @@ yoania.bufferingControl.on("buffering", function (resource) {
     console.log('Wait a litte! %s is buffering.', resource);
 });
 
-yoania.bufferingControl.on("ready", function (resource) {
+yoania.bufferingControl.on("error", function (resource) {
     console.log('Oh snap! We got an error from %s.', resource);
 });
 
